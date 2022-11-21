@@ -1,2 +1,2 @@
-# MiniBot
-Code for the Mini Robot complete with Pneumatics!
+# MiniBotPlayStation
+This code does not in fact use a playstation controller
