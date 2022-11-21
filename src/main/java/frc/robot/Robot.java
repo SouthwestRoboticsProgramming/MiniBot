@@ -8,7 +8,7 @@ import com.ctre.phoenix.motorcontrol.can.*;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.Compressor;
-//import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.Solenoid;
 
@@ -17,8 +17,8 @@ public class Robot extends TimedRobot {
 	// Declaring the hardware and controllers a joystick is present but currently unused.
 	WPI_TalonSRX _leftMaster = new WPI_TalonSRX(2);
 	WPI_TalonSRX _rightMaster = new WPI_TalonSRX(1);
-	XboxController _gamepad = new XboxController(0);
-//	Joystick _gamepad = new Joystick(0);
+	XboxController gamepad = new XboxController(0);
+	Joystick gamepad2 = new Joystick(1);
 
 	private static final int PCM_CAM_ID = 37;
 	private final Compressor compressor = new Compressor(PCM_CAM_ID, PneumaticsModuleType.CTREPCM);
@@ -52,7 +52,7 @@ public class Robot extends TimedRobot {
 		System.out.println("Compressor status: " + compressor.enabled());
 		
 	// Setting the button on the xbox controller to be a toggle.
-		boolean solenoidButton = _gamepad.getRightBumper();
+		boolean solenoidButton = gamepad.getRawButton(1);
 		
 		if (solenoidButton && !prevSolenoidButton)
 			solenoidToggle = !solenoidToggle;
@@ -61,7 +61,7 @@ public class Robot extends TimedRobot {
 		solenoid.set(solenoidToggle);
 		
 
-		_gamepad.setRumble(null, 0);
+		gamepad.setRumble(null, 0);
 	
 	}
 

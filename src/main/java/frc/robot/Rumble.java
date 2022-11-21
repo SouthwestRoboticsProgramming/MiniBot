@@ -2,8 +2,8 @@ package frc.robot;
 
 public class Rumble extends Robot {
     // This file controls the rumble of the gamepad by calculating the ammount it has been pushed as a vector.
-    double x = _gamepad.getLeftY();
-		double y = _gamepad.getLeftX(); 
+    double x = gamepad.getLeftY();
+		double y = gamepad.getLeftX(); 
 		double pushammt = Math.pow(x, 2) + Math.pow(y, 2);
     // Rumble_Thresh should be the same as the deadband created in Commands so that the rummble only happens when the robot is moving.
 		double Rumble_Thresh = .1;
@@ -15,7 +15,7 @@ public class Rumble extends Robot {
         
         if (pushammt > Math.pow(Rumble_Thresh, 2)) {
             double rumbleammt = pushammt * (max_Rumble + min_Rumble) - min_Rumble;
-            _gamepad.setRumble(null, rumbleammt);
+            gamepad.setRumble(null, rumbleammt);
         }
 }
 }

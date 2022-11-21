@@ -10,13 +10,13 @@ public class Commands extends Robot{
 	public void teleopPeriodic() {
    
 // Processing inputs coming from the _gamepad   
-    boolean GTFO = _gamepad.getPOV() == 180;
-    boolean turnLeft = _gamepad.getPOV() == 270;
-    boolean turnRight = _gamepad.getPOV() == 90;
-    boolean zoomy = _gamepad.getPOV() ==0;
-    double forward = -_gamepad.getLeftY();
-    double turn = -_gamepad.getLeftX();	
-    boolean slow = _gamepad.getRawButton(2);
+    boolean GTFO = gamepad.getPOV() == 180;
+    boolean turnLeft = gamepad.getPOV() == 270;
+    boolean turnRight = gamepad.getPOV() == 90;
+    boolean zoomy = gamepad.getPOV() ==0;
+    double forward = -gamepad.getLeftY();
+    double turn = -gamepad.getLeftX();	
+    boolean slow = gamepad.getRawButton(2);
 
 // Tells the controller to use a Deadband to avoid drift.
     forward = Deadband(forward);
