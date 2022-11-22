@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.Solenoid;
 
-
 public class Robot extends TimedRobot {
 	// Declaring the hardware and controllers a joystick is present but currently unused.
 	WPI_TalonSRX _leftMaster = new WPI_TalonSRX(2);
@@ -50,7 +49,6 @@ public class Robot extends TimedRobot {
 {
 	// Sends a message to the Riolog saying if the compressor is on or not.
 		System.out.println("Compressor status: " + compressor.enabled());
-		
 	// Setting the button on the xbox controller to be a toggle.
 		boolean solenoidButton = gamepad.getRawButton(1);
 		
