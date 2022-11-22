@@ -1,3 +1,4 @@
+// Tells the code that this is part of the robot.
 package frc.robot;
 
 // More imports

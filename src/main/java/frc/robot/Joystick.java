@@ -1,12 +1,13 @@
 package frc.robot;
 
+// Oh boy more imports
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.DemandType;
 
 public class Joystick extends Robot {
    @Override
    public void teleopPeriodic() {
-
+// Declaring variables for the Joystick.
     boolean GTFO = gamepad2.getPOV() == 180;
     boolean turnLeft = gamepad2.getPOV() == 270;
     boolean turnRight = gamepad2.getPOV() == 90;
